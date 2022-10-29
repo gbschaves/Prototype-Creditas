@@ -1,0 +1,11 @@
+.agency__account{
+    margin-top: 6rem;
+    align-items: center;
+    background-color:var(--bg-color);
+    box-shadow: 0px 2px 5px 1px rgb(153 153 153);
+    display:flex;
+    font-family: 'Roboto', sans-serif;
+    flex-direction: column;
+    padding:10px 20px;
+    
+}

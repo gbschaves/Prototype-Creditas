@@ -1,0 +1,19 @@
+.header__logo{
+    align-items: center;
+    margin-right: 40rem;
+    width: 3.7rem;
+}
+
+
+@media (max-width: 705px) {
+    .header__logo{
+        margin-right: 38rem;
+        width: 5rem;
+    }
+  }
+@media (max-width:500px){
+    .header__logo{
+        margin-right: 2rem;
+        display: inline-block;
+    }
+}

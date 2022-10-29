@@ -1,0 +1,9 @@
+.form__login-data {
+    background-color: var(--bg__form);
+    border: none;
+    border-bottom: 3px solid var(--btn);
+    height: 50px;
+    padding: 4px 40px;
+    text-align:center;
+    width: 296px;
+}

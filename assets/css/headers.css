@@ -1,0 +1,11 @@
+.headers {
+    background-color: var(--bg-color);
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+}
+
+@media (max-width: 705px) {
+    .headers {
+        min-width: 100vh;
+    }
+  }
