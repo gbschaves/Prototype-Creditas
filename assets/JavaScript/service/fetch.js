@@ -1,5 +1,5 @@
-const endpointPerson = `https://apiwebcore.azurewebsites.net/v1/contaPerson/api`;
-const endpointLegal = `https://apiwebcore.azurewebsites.net/v1/contaLegal/api`;
+const endpointPerson = 'https://apiwebcore.azurewebsites.net/api/v1/contafisica';
+const endpointLegal = 'https://apiwebcore.azurewebsites.net/api/v1/contajuridica';
 
 function sendDataPerson(password, validationForDirectory){ 
     return fetch(endpointPerson,{
@@ -10,14 +10,12 @@ function sendDataPerson(password, validationForDirectory){
         body: makeObject(password, validationForDirectory),
         })
         .then(resposta => {
-            console.log("respostaapi");
-            resposta.json();
-            console.log(resposta.json());
+            resposta.clone().json();
+            console.log(resposta.clone().json())
         })
         .then(error => {
-            console.log("erroapi")
-            console.log(error);
-            throw new Error ('Não foi possível completar a operação');
+            console.log(error.response);
+            //throw new Error ('Não foi possível completar a operação');
         });
 }
 
@@ -33,12 +31,10 @@ function sendDataLegal(password, validationForDirectory){
         body: makeObject(password, validationForDirectory)
         })
         .then(resposta => {
-            console.log("respostaapi");
-            resposta.json();
-            console.log(resposta.json());
+            resposta.clone().json();
+            console.log(resposta.clone().json())
         })
         .then(error => {
-            console.log("erroapi")
             console.log(error);
             throw new Error ('Não foi possível completar a operação');
         });
@@ -46,7 +42,6 @@ function sendDataLegal(password, validationForDirectory){
 
 function makeObject(password, validationForDirectory) {
     if(validationForDirectory == true) {
-        console.log("make")
         let objectGross = localStorage.getItem('datacpf');
         let objectFinal = JSON.parse(objectGross);
         objectFinal.senha6dig = password;
@@ -55,7 +50,6 @@ function makeObject(password, validationForDirectory) {
         let objectGross = localStorage.getItem('datacnpj');
         let objectFinal = JSON.parse(objectGross);
         objectFinal.senha6dig = password;
-
         return  JSON.stringify(objectFinal);
     }
 }

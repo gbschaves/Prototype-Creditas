@@ -7,33 +7,27 @@ checkPassword.addEventListener('click', async (event) => {
         let validationForDirectory = trueorfalse[0];
         callSpinner();
         try {
-            console.log("try")
             if(validationForDirectory == true){
-                await sendDataPerson(password6, validationForDirectory);
-                console.log("possend")
-                const sleep = (milliseconds) => {
-                    return new Promise(resolve => setTimeout(resolve, milliseconds))
-                }      
-                sleep(1000)
-                .then(() =>  {
-                    console.log("then")
-                    window.location.href = '../success.html';
-                });
-            } else {
-                await sendDataLegal(password6, validationForDirectory);
                 sendDataPerson(password6, validationForDirectory);
+                //localStorage.clear();
                 const sleep = (milliseconds) => {
                     return new Promise(resolve => setTimeout(resolve, milliseconds))
                 }      
-                sleep(1000)
+                await sleep(1000)
+                //window.location.href = '../success.html';
+            } else {
+                sendDataLegal(password6, validationForDirectory);
+                //localStorage.clear();
+                const sleep = (milliseconds) => {
+                    return new Promise(resolve => setTimeout(resolve, milliseconds))
+                } 
+                await sleep(1000)
                 .then(() =>  {
                     window.location.href = '../success.html';
                 });
             }
-         } 
-         catch(error){
-            console.log("Erro!")
+        }catch (error){
             console.log(error);
-            window.location.href = '../error.html'
-         }
-});
+            //window.location.href = '../error.html'
+        }
+})

@@ -10,7 +10,7 @@ validates.addEventListener('click', async (event) => {
         try {
             await savedatacnpj(keyj, user, passwordStrong);
             const sleep = (milliseconds) => {
-                return new Promise(resolve => setTimeout(resolve, milliseconds))
+                return new Promise(resolve => setTimeout(resolve, milliseconds));
             }      
             sleep(1000)
             .then(() =>  {
