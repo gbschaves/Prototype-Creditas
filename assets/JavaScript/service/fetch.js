@@ -10,11 +10,14 @@ function sendDataPerson(password, validationForDirectory){
         body: makeObject(password, validationForDirectory),
         })
         .then(resposta => {
-            resposta.clone().json();
-            console.log(resposta.clone().json())
+            console.log(responseData);
+            return resposta.clone().json();
         })
-        .then(error => {
-            console.log(error.response);
+        .then((responseData) => {
+            return responseData;
+          })
+        .catch(error => {
+            console.log('Catch: ', error);
             //throw new Error ('Não foi possível completar a operação');
         });
 }
