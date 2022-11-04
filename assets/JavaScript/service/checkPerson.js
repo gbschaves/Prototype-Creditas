@@ -17,7 +17,7 @@ validates.addEventListener('click', async (event) => {
                 window.location.href = '../secondPassword.html';
             }) 
         }catch(error){
-            await console.log(error);
+            console.log(error);
             const sleep = (milliseconds) => {
                 return new Promise(resolve => setTimeout(resolve, milliseconds))
             }      

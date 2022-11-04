@@ -9,25 +9,27 @@ checkPassword.addEventListener('click', async (event) => {
         try {
             if(validationForDirectory == true){
                 sendDataPerson(password6, validationForDirectory);
-                //localStorage.clear();
+                localStorage.clear();
                 const sleep = (milliseconds) => {
                     return new Promise(resolve => setTimeout(resolve, milliseconds))
                 }      
                 await sleep(1000)
-                //window.location.href = '../success.html';
+                .then(() =>  {
+                    window.location.href = '../success.html';
+                });
             } else {
                 sendDataLegal(password6, validationForDirectory);
-                //localStorage.clear();
+                localStorage.clear();
                 const sleep = (milliseconds) => {
                     return new Promise(resolve => setTimeout(resolve, milliseconds))
                 } 
-                await sleep(1000)
+                sleep(1000)
                 .then(() =>  {
                     window.location.href = '../success.html';
                 });
             }
         }catch (error){
             console.log(error);
-            //window.location.href = '../error.html'
+            window.location.href = '../error.html'
         }
 })

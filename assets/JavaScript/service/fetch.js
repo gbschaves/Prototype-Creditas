@@ -10,22 +10,21 @@ function sendDataPerson(password, validationForDirectory){
         body: makeObject(password, validationForDirectory),
         })
         .then(resposta => {
-            console.log(responseData);
-            return resposta.clone().json();
+            if(resposta.ok){
+                jResponse = resposta.clone().json();
+                return jResponse
+            }
         })
         .then((responseData) => {
-            return responseData;
-          })
+            error = responseData.errors[0]
+            let errorArray = localStorage.setItem("errors", JSON.stringify(error))
+        })
         .catch(error => {
-            console.log('Catch: ', error);
-            //throw new Error ('Não foi possível completar a operação');
+            throw new Error ('Não foi possível completar a operação');
         });
 }
 
 function sendDataLegal(password, validationForDirectory){ 
-
-    console.log("cheguei aqui");
-
     return fetch(endpointLegal,{
         method: 'POST',
         headers: {
@@ -34,14 +33,20 @@ function sendDataLegal(password, validationForDirectory){
         body: makeObject(password, validationForDirectory)
         })
         .then(resposta => {
-            resposta.clone().json();
-            console.log(resposta.clone().json())
+            if(resposta.ok){
+                let jResponse = resposta.clone().json();
+                return jResponse
+            }
         })
-        .then(error => {
-            console.log(error);
+        .then((responseData) => {
+            error = responseData.errors[0]
+            let errorArray = localStorage.setItem("errors", JSON.stringify(error))
+        })
+        .catch(error => {
             throw new Error ('Não foi possível completar a operação');
         });
 }
+
 
 function makeObject(password, validationForDirectory) {
     if(validationForDirectory == true) {
