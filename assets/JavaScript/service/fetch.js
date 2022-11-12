@@ -12,14 +12,25 @@ function sendDataPerson(password, validationForDirectory){
         .then(resposta => {
             if(resposta.ok){
                 jResponse = resposta.clone().json();
+                console.log(jResponse)
+                return jResponse
+            } else {
+                jResponse = resposta.clone().json();
+                console.log(jResponse)
                 return jResponse
             }
         })
         .then((responseData) => {
-            error = responseData.errors[0]
-            let errorArray = localStorage.setItem("errors", JSON.stringify(error))
+            if(!responseData.success === true) {
+                console.log(responseData)
+                error = responseData.errors[0]
+                console.log(error)
+                let errorArray = localStorage.setItem("errors", JSON.stringify(error))
+                return false
+            }
         })
         .catch(error => {
+            console.log(error)
             throw new Error ('Não foi possível completar a operação');
         });
 }
@@ -53,6 +64,7 @@ function makeObject(password, validationForDirectory) {
         let objectGross = localStorage.getItem('datacpf');
         let objectFinal = JSON.parse(objectGross);
         objectFinal.senha6dig = password;
+        console.log(JSON.stringify(objectFinal));
         return  JSON.stringify(objectFinal);
     } else {
         let objectGross = localStorage.getItem('datacnpj');
