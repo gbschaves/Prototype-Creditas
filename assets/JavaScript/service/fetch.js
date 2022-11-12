@@ -12,21 +12,19 @@ function sendDataPerson(password, validationForDirectory){
         .then(resposta => {
             if(resposta.ok){
                 jResponse = resposta.clone().json();
-                console.log(jResponse)
                 return jResponse
             } else {
                 jResponse = resposta.clone().json();
-                console.log(jResponse)
                 return jResponse
             }
         })
-        .then((responseData) => {
-            if(!responseData.success === true) {
-                console.log(responseData)
+        .then(responseData => {
+            if(!responseData.success == true) {
                 error = responseData.errors[0]
-                console.log(error)
                 let errorArray = localStorage.setItem("errors", JSON.stringify(error))
-                return false
+                let verificator = localStorage.setItem("verificator", JSON.stringify(false))
+            } else {
+                let verificator = localStorage.setItem("verificator", JSON.stringify(true))
             }
         })
         .catch(error => {
@@ -45,15 +43,24 @@ function sendDataLegal(password, validationForDirectory){
         })
         .then(resposta => {
             if(resposta.ok){
-                let jResponse = resposta.clone().json();
+                jResponse = resposta.clone().json();
+                return jResponse
+            } else {
+                jResponse = resposta.clone().json();
                 return jResponse
             }
         })
-        .then((responseData) => {
-            error = responseData.errors[0]
-            let errorArray = localStorage.setItem("errors", JSON.stringify(error))
+        .then(responseData => {
+            if(!responseData.success == true) {
+                error = responseData.errors[0]
+                let errorArray = localStorage.setItem("errors", JSON.stringify(error))
+                let verificator = localStorage.setItem("verificator", JSON.stringify(false))
+            } else {
+                let verificator = localStorage.setItem("verificator", JSON.stringify(true))
+            }
         })
         .catch(error => {
+            console.log(error)
             throw new Error ('Não foi possível completar a operação');
         });
 }
@@ -64,7 +71,6 @@ function makeObject(password, validationForDirectory) {
         let objectGross = localStorage.getItem('datacpf');
         let objectFinal = JSON.parse(objectGross);
         objectFinal.senha6dig = password;
-        console.log(JSON.stringify(objectFinal));
         return  JSON.stringify(objectFinal);
     } else {
         let objectGross = localStorage.getItem('datacnpj');
