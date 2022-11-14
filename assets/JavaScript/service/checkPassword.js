@@ -17,23 +17,23 @@ checkPassword.addEventListener('click', async (event) => {
                         return new Promise(resolve => setTimeout(resolve, milliseconds))
                     }      
                     await sleep(1000)
-                    //window.location.href = '../success.html';
+                    window.location.href = '../success.html';
                 } else {
-                    //window.location.href = '../error.html'
+                    window.location.href = '../error.html'
                 }   
             } else {
-                    //envia as informações para api cnpj
-                    sendDataLegal(password6, validationForDirectory)
-                    if(returnFetch == true){
-                        localStorage.clear();
-                        const sleep = (milliseconds) => {
-                            return new Promise(resolve => setTimeout(resolve, milliseconds))
-                        }      
-                        await sleep(1000)
-                        window.location.href = '../success.html';
-                    } else {
-                        window.location.href = '../error.html'
-                    }
+                //envia as informações para api cnpj
+                sendDataLegal(password6, validationForDirectory)
+                if(returnFetch == true){
+                    localStorage.clear();
+                    const sleep = (milliseconds) => {
+                        return new Promise(resolve => setTimeout(resolve, milliseconds))
+                    }      
+                    await sleep(1000)
+                    window.location.href = '../success.html';
+                } else {
+                    window.location.href = '../error.html'
+                }
             }
         }catch (error){
             console.log(error);

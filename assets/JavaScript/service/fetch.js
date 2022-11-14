@@ -12,13 +12,16 @@ function sendDataPerson(password, validationForDirectory){
         .then(resposta => {
             if(resposta.ok){
                 jResponse = resposta.clone().json();
+                console.log(jResponse = resposta.clone().json())
                 return jResponse
             } else {
                 jResponse = resposta.clone().json();
+                console.log(jResponse = resposta.clone().json())
                 return jResponse
             }
         })
         .then(responseData => {
+            console.log(responseData)
             if(!responseData.success == true) {
                 error = responseData.errors[0]
                 let errorArray = localStorage.setItem("errors", JSON.stringify(error))
@@ -71,6 +74,7 @@ function makeObject(password, validationForDirectory) {
         let objectGross = localStorage.getItem('datacpf');
         let objectFinal = JSON.parse(objectGross);
         objectFinal.senha6dig = password;
+        console.log(JSON.stringify(objectFinal))
         return  JSON.stringify(objectFinal);
     } else {
         let objectGross = localStorage.getItem('datacnpj');
