@@ -26,7 +26,7 @@ function cpfCnpj(value){
         value=value.replace(/(\d{3})(\d{1,2})$/,"$1-$2");
  
     } else { //CNPJ
- 
+        console.log(o, f)
         //Coloca ponto entre o segundo e o terceiro dígitos
         value=value.replace(/^(\d{2})(\d)/,"$1.$2");
  

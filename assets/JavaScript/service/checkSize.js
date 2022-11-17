@@ -10,6 +10,7 @@ function validationSize(size, value){
                 }      
                 sleep(1000)
                 .then(() =>  {
+                        console.log("then")
                         window.location.href = '../pessoaJuridica.html'
                 })                
         }else{

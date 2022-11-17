@@ -112,6 +112,7 @@ function validatesCpfCnpj(value) {
         } else {  
             return true;
         }
+        console.log(value)
     } else {
         return false;
     }
