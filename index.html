@@ -35,11 +35,11 @@
     </header>
 
     <main class="content" id="content">
-        <form class="agency__account" id="agency_">
+        <form required class="agency__account" id="agency_">
             <h1 class="agency__account-title">Para dar continuidade no cancelamento, <br> preencha os dados:</h1>
             <section class="forms">
                 <div class="form__login">
-                    <label for="cpfcnpj" class="form__login-description">Insira seu CPF ou CNPJ</label>
+                    <label required for="cpfcnpj" class="form__login-description">Insira seu CPF ou CNPJ</label>
                     <input required type="text" name="cpfcnpj" id="cpfcnpj" onkeypress="maskCpfCnpj(this,cpfCnpj)" placeholder="CPF/CNPJ" pattern="([0-9]{2}[\.]?[0-9]{3}[\.]?[0-9]{3}[\/]?[0-9]{4}[-]?[0-9]{2})|([0-9]{3}[\.]?[0-9]{3}[\.]?[0-9]{3}[-]?[0-9]{2})" class="form__login-data">
                     <p class="form__login-required">CPF ou CNPJ é um campo obrigatório</p>
                 </div>
