@@ -14,7 +14,7 @@ validates.addEventListener('click', async (event) => {
             }      
             sleep(1000)
             .then(() =>  {
-                window.location.href = '../secondPassword.html';
+                window.location.href = './secondPassword.html';
             }) 
         }catch(error){
             console.log(error);
@@ -23,7 +23,7 @@ validates.addEventListener('click', async (event) => {
             }      
             sleep(1000)
             .then(() =>  {
-                window.location.href = '../error.html';
+                window.location.href = './error.html';
             })  
          } 
 });

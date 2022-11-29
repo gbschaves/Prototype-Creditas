@@ -11,7 +11,7 @@ function validationSize(size, value){
                 sleep(1000)
                 .then(() =>  {
                         console.log("then")
-                        window.location.href = '../pessoaJuridica.html'
+                        window.location.href = './pessoaJuridica.html'
                 })                
         }else{
                 let cpf = value;
@@ -21,7 +21,7 @@ function validationSize(size, value){
                 }      
                 sleep(1000)
                 .then(() =>  {
-                        window.location.href = '../pessoaFisica.html'
+                        window.location.href = './pessoaFisica.html'
                 })
         }   
 }   
