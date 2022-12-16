@@ -1,0 +1,16 @@
+.header__logo{
+    align-items: center;
+    margin-right: 22rem;
+    width: 3.7rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@media (max-width: 705px) {
+    .header__logo{
+        width: 3.7rem;
+    }
+  }

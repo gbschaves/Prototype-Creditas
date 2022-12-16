@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap');
+
+:root {
+    --bg-color: #fcfc30;
+    --text-color: #525dff; 
+    --line__erro:  #FF0000;
+    --bg__form: #fcb900;
+    --descripiton__info: #465eff;
+    --btn: #1194F6;
+}
+
+/* cores
+   Card Agencia e conta = width=357px heigth = 357
+    form= h51 / w296    
+*/
+
+*{
+    font-family: 'Roboto', sans-serif;
+}
+
+.content{
+    display: flex;
+    justify-content: center;
+    height: auto;
+}
+
+.content{
+    width: 100vw;
+    height: 65vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+margin: 0px;
+}

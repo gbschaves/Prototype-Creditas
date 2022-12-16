@@ -1,0 +1,11 @@
+.header__text{
+    color: var(--text-color);
+    font-size: 2.15rem;
+    font-weight: 500;    
+    position: absolute;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}

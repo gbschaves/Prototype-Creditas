@@ -1,0 +1,6 @@
+.headers {
+    background-color: var(--bg-color);
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+    display: flex;
+}
